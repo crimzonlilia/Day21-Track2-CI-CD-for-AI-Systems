@@ -27,6 +27,8 @@ def train(
     Tra ve:
         accuracy (float): do chinh xac tren tap danh gia.
     """
+    # Bat buoc dung sqlite de tranh loi MissingConfigException tren GitHub Actions
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
 
     # TODO 1: Doc du lieu huan luyen va danh gia
     df_train = pd.read_csv(data_path)
